@@ -2,8 +2,11 @@ namespace models.interfaces;
 
 public interface IPedidoBuilder
 {
-    IPedidoBuilder AddClient(Client c);
+    IPedidoBuilder AddClient(string c);
     IPedidoBuilder AddAddress(string address);
-    IPedidoBuilder AddProducts(List<Producto> products);
+    IPedidoBuilder AddProduct(string nombre, decimal precio, int cantidad);
+    IPedidoBuilder SetEnvio(string nombre);
+
+    void Reset();
     Pedido Build();
 }
